@@ -78,7 +78,7 @@
                     </div>
                     <div class="botones-form">
                         <button class="btn enviar" onclick="mostrarValor()" type="submit" id="btn-calcular" name="Calcular" value="Calcular">Calcular</button>
-                        <button class="btn" id="btn-limpiar" type="reset">Limpiar</button>
+                        <button class="btn" id="btn-limpiar" onclick="limpiarResultado()" type="reset">Limpiar</button>
                     </div>
 
                 </form>
@@ -108,21 +108,26 @@
 
         function mostrarValor() {
 
-      
-/*
-            // 1. Seleccionar el elemento input por su ID
-            // 3. Convertir la cadena a número (float o entero)
-            //    Si es un número decimal, usa parseFloat()
-            //    Si es un número entero, usa parseInt()
-            const valorNum1 = parseFloat(valorCadena1); // o parseInt(valorComoCadena)
-            const valorNum2 = parseFloat(valorCadena2); 
+            //Valido que las variables ingresadas no sean vacías
+            const val1 = document.getElementById('num1').value
+            const val2 = document.getElementById('num2').value
 
-            console.log(valorNum1)
-            console.log(valorNum2)*/
+            /*console.log(`numero1: ${val1}`)
+            console.log(`numero2: ${val2}`)*/
+
+                // Validar que ambos campos no estén vacíos
+            if (val1 === '' || val2 === '') {
+                document.getElementById('resultado').textContent = `Resultado`;
+                return; // Salir de la función si hay algún campo vacío
+            }
             
+            //Parseo las variables ingresadas por teclado
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
 
+            /*
+            console.log(`numero1: ${num1}`)
+            console.log(`numero2: ${num1}`)*/
 
             // Obtener el radio button seleccionado
             const operacion = document.querySelector('input[name="operacion"]:checked').value;
@@ -154,6 +159,12 @@
             // También puedes imprimirlo en la consola
             console.log(valorNumerico);*/
 }
+
+    function limpiarResultado(){
+
+        document.getElementById('resultado').textContent = `Resultado`;
+
+    }
 
     </script>
 </body>
