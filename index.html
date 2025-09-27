@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/calculadora-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Calculadora Modular</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/calculadora-icon.png" alt="Calculadora" class="logo-img">
+            <a href="index.html">CALCULADORA</a>
+        </div>
+        <nav class="navbar">
+           <ul class="nav-menu">
+                    <li class="nav-item"><a href="https://github.com/nicolasgonzalez15" target="_blank" class="nav-link fa fa-github"></a></a></li>
+                    <li class="nav-item"><a href="https://www.linkedin.com/in/nicolasgonzalez15/" target="_blank" class="nav-link fa fa-linkedin"></a></a></li>
+                    <li class="nav-item"><a href="mailto:nicolas.gonzalez15@gmail.com" target="_blank" class="nav-link fa fa-envelope"></a></a></li>
+
+            <!--    <li class="nav-item"> <a href="#" class="nav-link">PRINCIPAL</a></li>
+                <li class="nav-item"> <a href="#" class="nav-link">CALCULADORA</a></li>
+                <li class="nav-item"> <a href="#" class="nav-link">CONTACTO</a></li>-->
+            </ul>
+        </nav>
+        
+    </header>
+    <main class="main">
+        <section class="principal" id="principal">
+            <h1 id="titulo-principal">Calculadora Modular</h1>
+            <p>Gracias por usar nuestra calculadora. Operaciones disponibles: Suma, Resta, Producto y División.</p>
+        </section>
+        <section class="calculadora" id="calculadora">
+            <h2>Bienvenido a la calculadora</h2>
+            <p class="subtitulo"> Ingrese los números y la operación a realizar</p>
+
+            <div class="form-calc">
+                <form action="#" method="post" id="form-calculadora" onsubmit="return false;">
+                   <p class="descriptor">Ingreso números</p>
+                    <div class="ingreso-nros">
+                        
+                        <div class="primer-numero">
+                            <label for="num1">Número 1</label>
+                            <input type="number" step="1" name="num1" id="num1" required>
+                        </div>
+                        <br>
+                        <div class="segundo-numero">
+                            <label for="num2">Número 2</label>
+                            <input type="number" step="1" name="num2" id="num2" required>
+                        </div>
+
+                    </div>
+                   <p class="descriptor">Operación</p>
+                    <div class="tipos-operacion">
+                        <div class="opcion-suma">
+                            <input type="radio" name="operacion" value="suma" id="suma" checked>
+                            <label for="suma">Suma</label>
+                        </div>
+                        <div class="opcion-resta">
+                            <input type="radio" name="operacion" value="resta" id="resta">
+                            <label for="resta">Resta</label>
+                        </div>
+                        <div class="opcion-producto">
+                            <input type="radio" name="operacion" value="producto" id="producto">
+                            <label for="producto">Producto</label><br>
+                        </div>
+                        <div class="opcion-division">
+                            <input type="radio" name="operacion" value="division" id="division">
+                            <label for="division">División</label><br>
+                        </div>
+                    </div>
+                    <p class="descriptor">Resultado</p>
+                    <div class="resultado">
+                        <p class="resultado" id="resultado" >Resultado</p>
+                    </div>
+                    <div class="botones-form">
+                        <button class="btn enviar" onclick="mostrarValor()" type="submit" id="btn-calcular" name="Calcular" value="Calcular">Calcular</button>
+                        <button class="btn" id="btn-limpiar" type="reset">Limpiar</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+                
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <p>© 2025 NINODEV · Desarrollado por Nicolás González </p>
+    </footer>
+    
+    <script>
+     
+     /*
+        const numberInput = document.getElementById("num1"); // Get the input element by its ID
+        const stringValue = numberInput.value; // Get the value as a string
+
+        // Convert to an integer
+        const intValue = parseInt(stringValue);
+
+        console.log("String value:", stringValue);
+        console.log("Integer value:", intValue);*/
+
+        function mostrarValor() {
+
+      
+/*
+            // 1. Seleccionar el elemento input por su ID
+            // 3. Convertir la cadena a número (float o entero)
+            //    Si es un número decimal, usa parseFloat()
+            //    Si es un número entero, usa parseInt()
+            const valorNum1 = parseFloat(valorCadena1); // o parseInt(valorComoCadena)
+            const valorNum2 = parseFloat(valorCadena2); 
+
+            console.log(valorNum1)
+            console.log(valorNum2)*/
+            
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+
+            // Obtener el radio button seleccionado
+            const operacion = document.querySelector('input[name="operacion"]:checked').value;
+            
+            let resultado;
+
+            // Realizar la operación correspondiente
+            switch (operacion) {
+                case 'suma':
+                    resultado = num1 + num2;
+                    break;
+                case 'resta':
+                    resultado = num1 - num2;
+                    break;
+                case 'producto':
+                    resultado = num1 * num2;
+                    break;
+                case 'division':
+                    resultado = num2 !== 0 ? num1 / num2 : 'Error: No se puede dividir por cero';
+                    break;
+                default:
+                    resultado = 'Operación no válida';
+            }
+            
+            // 4. Mostrar el resultado en un párrafo o usarlo en tu lógica
+            //resultado = valorNum1 + valorNum2
+            document.getElementById('resultado').textContent = `El valor calculado es: ${resultado}`;
+            /*
+            // También puedes imprimirlo en la consola
+            console.log(valorNumerico);*/
+}
+
+    </script>
+</body>
+</html>
