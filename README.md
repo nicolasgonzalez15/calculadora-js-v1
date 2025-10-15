@@ -1,39 +1,10 @@
 # Calculadora Responsive JS v1
 Proyecto de calculadora responsive, usando HTML, CSS y JS para la funcionalidad de la misma
 
+## Detalles
+* Archivo de calculadora realizado en HTML y CSS
+* JS con funcionalidad de calculadora
 
-## Propósito del proyecto
-Con el fin de ahorrar tiempo y recursos, se quiere automatizar flujos críticos de módulos de:
- - Pantalla de Login, utilizando datos válidos e inválidos
- - Menú principal, con submenues, filtros, y catálogo de productos
- - Carrito de compras, al agregar productos al mismo
+## Contacto
+* Mail: nicolas.gonzalez15@gmail.com
 
-## Tecnologías usadas
-* Python
-* Selenium webdriver (Levantar browser automatizado)
-* pytest (test unitarios)
-  
-
-## Estructura de carpetas
-
-- **README.md**
-- **pytest.ini/**
-- **test/**
-    - **login.py**
-    - **conftest.py**
-    - **test_login.py**
-    - **test_error.py**
-    - **test_inventario.py**
-    - **test_carrito.py**
-    - **reportes/**
-        - **_index.md**
-        - **configuracion.md**
-        - **uso_basico.md**
-
-  ## Ejecución de tests
-  Para correr todos los tests, utilizar el siguiente comando:
-  * python3 -m pytest test/ -v
-  Para correr un test en particular:
-  * python3 -m pytest test/test_login.py -v
- 
-    
